@@ -8,13 +8,13 @@
             <h5 class="centered">Marcel Newman</h5>
 
             <li class="nav-item">
-                <a href="admin" class="nav-link">
+                <a href="{{route('admin.index')}}" class="nav-link">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="admin/category" class="nav-link">
+                <a href="{{route('admin.category.index')}}" class="nav-link">
                     <i class="fa fa-cogs"></i>
                     <span>Categories</span>
                 </a>

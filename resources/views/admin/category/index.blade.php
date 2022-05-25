@@ -8,7 +8,7 @@
     <section id="main-content">
         <section class="wrapper site-min-height">
             <div class="row mt">
-                <a href="/admin/category/create"class="btn btn-block btn-info btn-sm" style="width: 200px;">Add Category</a>
+                <a href="{{route('admin.category.create')}}" class="btn btn-success btn-sm">Add Category</a>
             </div>
             <div class="row mt">
                 <div class="col-lg-12">
@@ -35,9 +35,10 @@
                             <td>{{$rs->description}}</td>
                             <td>{{$rs->image}}</td>
                             <td>{{$rs->status}}</td>
-                            <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-block btn-info btn-sm">Edit</a>   </td>
-                            <td><a href="/admin/category/delete/{{$rs->id}}"class="btn btn-block btn-danger btn-sm">Delete</a>   </td>
-                            <td><a href="/admin/category/show/{{$rs->id}}"class="btn btn-block btn-success btn-sm">Show</a>   </td>
+                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-info btn-sm">Edit</a></td>
+                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Are you sure to delete?')">Delete</a></td>
+                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success btn-sm">Show</a></td>
                         </tr>
                         @endforeach
                         </tbody>

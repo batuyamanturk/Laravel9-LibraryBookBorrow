@@ -15,7 +15,7 @@
                             Category Elements
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="/admin/category/store">
+                            <form role="form" method="post" action="{{route('admin.category.create')}}">
                                 @csrf
                                 <div class="form-group">
                                     <label>Title</label>
