@@ -7,7 +7,9 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Category List</h3>
+            <div class="row mt">
+                <a href="/admin/category/create"class="btn btn-block btn-info btn-sm" style="width: 200px;">Add Category</a>
+            </div>
             <div class="row mt">
                 <div class="col-lg-12">
                     <table class="table table-bordered">
