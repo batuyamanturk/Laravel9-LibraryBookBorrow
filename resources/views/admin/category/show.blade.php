@@ -38,8 +38,15 @@
                             <td> {{$data->keywords}} </td>
                         </tr>
                         <tr>
+                            <th style="width: 200px;">Description</th>
+                            <td> {{$data->description}} </td>
+                        </tr>
+                        <tr>
                             <th style="width: 200px;">Image</th>
-                            <td>  </td>
+                            <td>@if ($data->image)
+                                    <img src="{{Storage::url($data->image)}}" style="height:150px">
+                                @endif
+                            </td>
                         <tr>
                             <th style="width: 200px;">Status</th>
                             <td> {{$data->status}} </td>

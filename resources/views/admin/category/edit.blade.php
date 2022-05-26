@@ -15,8 +15,20 @@
                             Category Elements
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="{{route('admin.category.store',['id'=>$data->id])}}" enctype="multipart/form-data"">
+                            <form role="form" method="post" action="{{route('admin.category.update',['id'=>$data->id])}}" enctype="multipart/form-data"">
                                 @csrf
+                                <div class="form-group">
+                                    <label>Parent Category</label>
+                                    <select class="form-control select2" name="parent_id">
+                                        <option value="0" selected="selected">Main Category</option>
+                                        @foreach($datalist as $rs)
+                                            <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                                {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 <div class="form-group">
                                     <label>Title</label>
                                     <input class="form-control" type="text" name="title" value="{{$data->title}}" required>
