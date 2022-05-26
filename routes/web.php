@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminBookController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -38,11 +39,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//***************************ADMIN PANEL ROUTES *********************************************
+//***************************ADMIN PANEL ROUTES ************************************************************************
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
 
-    //***************************ADMIN CATEGORY ROUTES *********************************************
+//********************************ADMIN CATEGORY ROUTES ****************************************************************
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
         Route::get('/',  'index')->name('index');
         Route::get('/create', 'create')->name('create');
@@ -51,5 +52,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
-});
     });
+//********************************ADMIN BOOK ROUTES ****************************************************************
+    Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store',  'store')->name('store');
+        Route::get('/edit/{id}',  'edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}',  'destroy')->name('destroy');
+        Route::get('/show/{id}',  'show')->name('show');
+
+    });
+});
+
