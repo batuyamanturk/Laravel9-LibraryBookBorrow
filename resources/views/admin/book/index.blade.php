@@ -16,12 +16,12 @@
                         <thead>
                         <tr>
                             <th style="width: 10px">Id</th>
-                            <th>Parent</th>
                             <th>Title</th>
                             <th>Author</th>
                             <th>Pagenum</th>
                             <th>Publicationyear</th>
                             <th>Image</th>
+                            <th>Image Gallery</th>
                             <th>Status</th>
                             <th style="width: 40px">Edit</th>
                             <th style="width: 40px">Delete</th>
@@ -32,15 +32,19 @@
                         @foreach($data as $rs)
                         <tr>
                             <td>{{$rs->id}}</td>
-                            <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title)}}</td>
                             <td>{{$rs->title}}</td>
                             <td>{{$rs->author}}</td>
                             <td>{{$rs->pagenum}}</td>
                             <td>{{$rs->publicationyear}}</td>
                             <td>
                                 @if($rs->image)
-                                    <img src="{{Storage::url($rs->image)}}" style="height: 40px";>
+                                    <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                 @endif
+                            </td>
+                            <td> <a href="{{route('admin.image.index',['bid'=>$rs->id])}}"
+                                onclick="return !window.open(this.href,'','top=50 left=100 width=1110 height=700')">
+                                <img src="{{asset('assets')}}/admin/assets/img/gallery.png"style="height: 40px">
+                                </a>
                             </td>
                             <td>{{$rs->status}}</td>
                             <td><a href="{{route('admin.book.edit',['id'=>$rs->id])}}" class="btn btn-info btn-sm">Edit</a></td>

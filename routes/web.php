@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminBookController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -62,6 +63,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
+
+    });
+    //********************************ADMIN BOOK IMAGE GALLERY ROUTES ****************************************************************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{bid}','index')->name('index');
+        Route::post('/store/{bid}',  'store')->name('store');
+        Route::get('/destroy/{bid}/{id}',  'destroy')->name('destroy');
 
     });
 });
