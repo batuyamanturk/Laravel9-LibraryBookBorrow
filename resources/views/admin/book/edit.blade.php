@@ -2,6 +2,7 @@
 
 @section('title', 'Edit Books : '.$data->title)
 
+
 @section('content')
 
     <!--main content start-->
@@ -42,7 +43,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Detail</label>
-                                    <input class="form-control" type="text" name="detail" placeholder="Detail">
+                                    <textarea class="form-control" id="detail" name="detail"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Author</label>
@@ -82,3 +83,5 @@
 
     <!--main content end-->
 @endsection
+
+

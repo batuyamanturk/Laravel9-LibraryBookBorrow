@@ -48,7 +48,7 @@
                         <tr>
                         <tr>
                             <th style="width: 200px;">Details</th>
-                            <td> {{$data->detail}} </td>
+                            <td> {!! $data->detail !!} </td>
                         </tr>
                             <th style="width: 200px;">Author</th>
                             <td> {{$data->author}} </td>
