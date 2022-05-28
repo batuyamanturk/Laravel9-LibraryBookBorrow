@@ -26,12 +26,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="admin/ımage;" class="nav-link">
-                    <i class="fa fa-cogs"></i>
-                    <span>Image</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="admin/borrow;" class="nav-link" >
                     <i class="fa fa-cogs"></i>
                     <span>Borrow</span>

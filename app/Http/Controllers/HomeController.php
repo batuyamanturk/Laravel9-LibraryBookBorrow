@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +10,12 @@ class HomeController extends Controller
     //
     public function index()
     {
-        return view('home.index');
+        $sliderdata=Book::limit(4)->get();
+        $booklist1=Book::limit(4);
+        return view('home.index',[
+            'sliderdata'=>$sliderdata,
+            'booklist1'=>$booklist1
+        ]);
     }
 
     public function test()

@@ -1,62 +1,33 @@
 <section class="slider_section">
-    <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="first-slide" src="{{asset('assets')}}/images/banner.jpg" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-                        <h1>The Best Libraries That<br> Every Book Lover Must<br> Visit!</h1>
-                        <p>adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim<br> veniam, quis nostrud exercitation </p>
-                        <div class="button_section"> <a class="main_bt" href="#">Read More</a>  </div>
-                        <ul class="locat_icon">
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/facebook.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/Twitter.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/linkedin.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/instagram.png"></a></li>
-                        </ul>
-                    </div>
+    <!-- Start slider -->
+    <section id="aa-slider">
+        <div class="aa-slider-area">
+            <div id="sequence" class="seq">
+                <div class="seq-screen">
+                    <ul class="seq-canvas">
+                        <!-- single slide item -->
+                        @foreach($sliderdata as $rs)
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="{{Storage::url($rs->image)}}"  />
+                            </div>
+                            <div class="seq-title">
+                                <h2 data-seq>{{$rs->title}}</h2>
+                                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">BORROW NOW</a>
+                            </div>
+                        </li>
+                    @endforeach
+
+
+                    </ul>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img class="second-slide" src="{{asset('assets')}}/images/banner.jpg" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-                        <h1>The Best Libraries That<br> Every Book Lover Must<br> Visit!</h1>
-                        <p>adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim<br> veniam, quis nostrud exercitation </p>
-                        <div class="button_section"> <a class="main_bt" href="#">Read More</a>  </div>
-                        <ul class="locat_icon">
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/facebook.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/Twitter.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/linkedin.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/instagram.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="third-slide" src="{{asset('assets')}}/images/banner.jpg" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption relative">
-                        <h1>The Best Libraries That<br> Every Book Lover Must<br> Visit!</h1>
-                        <p>adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim<br> veniam, quis nostrud exercitation </p>
-                        <div class="button_section"> <a class="main_bt" href="#">Read More</a>  </div>
-                        <ul class="locat_icon">
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/facebook.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/Twitter.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/linkedin.png"></a></li>
-                            <li> <a href="#"><img src="{{asset('assets')}}/icon/instagram.png"></a></li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- slider navigation btn -->
+                <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                    <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                    <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+                </fieldset>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+    </section>
+    <!-- / slider -->
 </section>
