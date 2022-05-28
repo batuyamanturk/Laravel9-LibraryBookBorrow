@@ -11,12 +11,13 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata=Book::limit(4)->get();
-        $booklist1=Book::limit(4);
+        $booklist1=Book::limit(8)->get();
         return view('home.index',[
             'sliderdata'=>$sliderdata,
             'booklist1'=>$booklist1
         ]);
     }
+
 
     public function test()
     {
