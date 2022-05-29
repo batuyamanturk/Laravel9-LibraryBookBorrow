@@ -13,7 +13,7 @@
                             </div>
                             <div class="seq-title">
                                 <h2 data-seq>{{$rs->title}}</h2>
-                                <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">BORROW NOW</a>
+                                <a data-seq href="{{route('book',[$rs->id])}}" class="aa-shop-now-btn aa-secondary-btn">BORROW NOW</a>
                             </div>
                         </li>
                     @endforeach

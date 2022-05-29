@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //
+
     public function index()
     {
         $sliderdata=Book::limit(4)->get();
@@ -15,6 +15,12 @@ class HomeController extends Controller
         return view('home.index',[
             'sliderdata'=>$sliderdata,
             'booklist1'=>$booklist1
+        ]);
+    }
+    public function book($id){
+        $data=Book::find($id);
+        return view('home.book',[
+            'data'=>$data
         ]);
     }
 
