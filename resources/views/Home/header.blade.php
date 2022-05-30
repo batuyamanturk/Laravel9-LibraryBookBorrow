@@ -45,6 +45,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="aa-header-bottom-area">
+                            <!-- logo  -->
+                            <div class="aa-logo">
+                                <!-- Text based logo -->
+                                <a href="index.html">
+                                    <a href="{{route('home')}}"><img src="{{asset('assets')}}/img/logo.jpg" alt="logo img"></a>
+                                </a>
+                            </div>
+                            <!-- / logo  -->
                             <!-- cart box -->
                             <div class="aa-cartbox">
                                 <a class="aa-cart-link" href="#">
@@ -71,12 +79,12 @@
                                             <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                                         </li>
                                         <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
+                                            <span class="aa-cartbox-total-title">
+                                            Total
+                                            </span>
                                             <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
+                                            $500
+                                            </span>
                                         </li>
                                     </ul>
                                     <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>

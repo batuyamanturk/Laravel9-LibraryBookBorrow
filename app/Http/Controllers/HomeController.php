@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public static function maincategorylist()
     {
         return Category::where('parent_id','=',0)->with('children')->get();
+    }
+    public function categorybooks($id)
+    {
+        $category=Category::find($id);
+        $books= DB::table('books')->where('category_id',$id)->get();
+        return view('home.categorybooks',[
+            'category'=>$category,
+            'books'=>$books
+        ]);
     }
 
     public function index()

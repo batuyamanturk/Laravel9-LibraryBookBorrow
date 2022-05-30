@@ -8,17 +8,15 @@
                         <!-- single slide item -->
                         @foreach($sliderdata as $rs)
                         <li>
-                            <div class="seq-model">
-                                <img data-seq src="{{Storage::url($rs->image)}}"  />
+                            <div class="seq-model"  >
+                                <img  src="{{Storage::url($rs->image)}} " />
                             </div>
-                            <div class="seq-title">
-                                <h2 data-seq>{{$rs->title}}</h2>
-                                <a data-seq href="{{route('book',[$rs->id])}}" class="aa-shop-now-btn aa-secondary-btn">BORROW NOW</a>
+                            <div class="seq-title" >
+                                <h2 >{{$rs->title}}</h2>
+                                <a  href="{{route('book',[$rs->id])}}" class=" aa-secondary-btn">Borrow Now</a>
                             </div>
                         </li>
-                    @endforeach
-
-
+                        @endforeach
                     </ul>
                 </div>
                 <!-- slider navigation btn -->

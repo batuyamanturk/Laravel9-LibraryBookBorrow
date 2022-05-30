@@ -17,17 +17,18 @@
                 <div class="navbar-collapse collapse">
                     <!-- Left nav -->
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a> </li>
                         <li><a href="#">Categories <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 @foreach($mainCategories as $rs)
-                                <li>
-                                    <a href="#">{{$rs->title}}</a>
-                                    @if(count($rs->children))
-                                        @include('home.categorytree',['children'=>$rs->children])
-                                    @endif
-                                </li>
+                                    <li>
+                                        <a href="{{route('categorybooks',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                                        @if(count($rs->children))
+                                            @include('home.categorytree',['children'=>$rs->children])
+                                        @endif
+                                    </li>
                                 @endforeach
+
                             </ul>
                         </li>
                     </ul>
