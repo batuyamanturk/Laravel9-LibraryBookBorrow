@@ -46,7 +46,7 @@
                                     <textarea class="form-control" id="detail" name="detail"></textarea>
                                     <script>
                                         ClassicEditor
-                                            .create( document.querySelector( '#detail' ) )
+                                            .create( document.querySelector( '#tex' ) )
                                             .then( editor => {
                                                 console.log( editor );
                                             } )
@@ -91,4 +91,14 @@
     </section><!-- /MAIN CONTENT -->
 
     <!--main content end-->
+@endsection
+
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#textarea').summernote();
+        })
+    </script>
 @endsection

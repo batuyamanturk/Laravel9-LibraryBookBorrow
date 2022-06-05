@@ -28,9 +28,12 @@
                                         @endif
                                     </li>
                                 @endforeach
-
                             </ul>
                         </li>
+                        <li><a href="{{route('home')}}">About Us</a> </li>
+                        <li><a href="{{route('home')}}">References</a> </li>
+                        <li><a href="{{route('home')}}">Contact Us</a> </li>
+                        <li><a href="{{route('home')}}">FAQ</a> </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

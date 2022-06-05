@@ -26,6 +26,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{route('admin.settings')}}" class="nav-link">
+                    <i class="fa fa-cogs"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="admin/borrow;" class="nav-link" >
                     <i class="fa fa-cogs"></i>
                     <span>Borrow</span>

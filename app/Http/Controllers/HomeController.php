@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,9 +26,13 @@ class HomeController extends Controller
 
     public function index()
     {
+        $page='home';
         $sliderdata=Book::limit(4)->get();
         $booklist1=Book::limit(8)->get();
+        $settings = Settings::first();
         return view('home.index',[
+            'page'=>$page,
+            'settings'=>$settings,
             'sliderdata'=>$sliderdata,
             'booklist1'=>$booklist1
         ]);

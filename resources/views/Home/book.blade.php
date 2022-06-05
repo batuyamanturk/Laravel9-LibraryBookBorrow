@@ -40,10 +40,12 @@
                                 <!-- Modal view content -->
                                 <div class="col-md-7 col-sm-7 col-xs-12">
                                     <div class="aa-product-view-content">
-                                        <h3>{{$data->title}}</h3>
+                                        <h2>{{$data->title}}</h2>
                                         <br>
-                                        <br>
-                                        <p>{{$data->description}}</p>
+                                        <label>Author: <p>{{$data->author}}</p></label><br>
+                                        <label>Page Number: <p>{{$data->pagenum}}</p></label><br>
+                                        <label>Publication Year: <p>{{$data->publicationyear}}</p></label><br>
+                                        <label>Description: <p>{{$data->description}}</p></label>
                                         <div class="aa-prod-view-bottom">
                                             <a class="aa-add-to-cart-btn" href="#">Add To Cart</a>
                                         </div>

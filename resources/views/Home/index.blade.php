@@ -1,6 +1,9 @@
 @extends('layouts.frontbase')
 
-@section('title', 'Library Book Borrow')
+@section('title', $settings->title)
+@section('description',  $settings->description)
+@section('keywords',  $settings->keywords)
+@section('icon',Storage::url($settings->icon))
 
 
 
@@ -19,11 +22,10 @@
                             <div class="aa-product-inner">
                                 <!-- start prduct navigation -->
                                 <ul class="nav nav-tabs aa-products-tab">
-                                    <li class="active"><a href="#men" data-toggle="tab">Best Sellers</a></li>
+                                    <li class="active"><a href="#men" data-toggle="tab">Most borrowed</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <!-- Start novals book category -->
                                     <div class="tab-pane fade in active" id="men">
                                         <ul class="aa-product-catg">
                                             <!-- start single book item -->
