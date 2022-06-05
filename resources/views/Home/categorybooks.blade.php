@@ -1,6 +1,7 @@
 @extends('layouts.frontbase')
 
-@section('title', $category->title .' Books')
+@section('title', $category->title)
+@section('icon',Storage::url($settings->icon))
 
 @section('content')
     <section id="aa-catg-head-banner">

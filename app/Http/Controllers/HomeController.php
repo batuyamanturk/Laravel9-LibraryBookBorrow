@@ -18,9 +18,11 @@ class HomeController extends Controller
     {
         $category=Category::find($id);
         $books= DB::table('books')->where('category_id',$id)->get();
+        $settings = Settings::first();
         return view('home.categorybooks',[
             'category'=>$category,
-            'books'=>$books
+            'books'=>$books,
+            'settings'=>$settings
         ]);
     }
 
@@ -37,10 +39,37 @@ class HomeController extends Controller
             'booklist1'=>$booklist1
         ]);
     }
+
+    public function about()
+    {
+
+        $settings = Settings::first();
+        return view('home.about',[
+            'settings'=>$settings,
+        ]);
+    }
+
+    public function references()
+    {
+        $settings = Settings::first();
+        return view('home.references',[
+            'settings'=>$settings,
+        ]);
+    }
+    public function contact()
+    {
+        $settings = Settings::first();
+        return view('home.contact',[
+            'settings'=>$settings,
+        ]);
+    }
+
     public function book($id){
         $data=Book::find($id);
+        $settings = Settings::first();
         return view('home.book',[
-            'data'=>$data
+            'data'=>$data,
+            'settings'=>$settings,
         ]);
     }
 
@@ -50,22 +79,4 @@ class HomeController extends Controller
         return view('home.test');
     }
 
-    public function param($id,$num)
-    {
-        //echo "Parameter 1:",$id;
-        //echo "<br> Parameter 2:",$num;
-        //echo "<br> Sum of parameters :",$id+$num;
-        return view('home.test2',
-            [
-                'id'=>$id,
-                'num'=>$num
-            ]);
-    }
-
-    public function save(Request $request)
-    {
-        echo "Save function";
-        echo "<br>First Name:",$_REQUEST["fname"];
-        echo "<br>Last Name:",$_REQUEST["lname"];
-    }
 }

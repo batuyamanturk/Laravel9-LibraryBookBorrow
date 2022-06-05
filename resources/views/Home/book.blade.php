@@ -1,6 +1,7 @@
 @extends('layouts.frontbase')
 
 @section('title', $data->title)
+@section('icon',Storage::url($settings->icon))
 
 @section('content')
     <!-- catg header banner section -->
