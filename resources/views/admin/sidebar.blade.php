@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="admin/message;" class="nav-link">
+                <a href="{{route('admin.message.index')}}" class="nav-link">
                     <i class="fa fa-cogs"></i>
                     <span>Message</span>
                 </a>

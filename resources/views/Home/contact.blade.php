@@ -39,34 +39,36 @@
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div class="aa-contact-address-left">
-                                                <form class="comments-form contact-form" action="">
+                                                <div class="section title">
+                                                    <h3>Contact Form</h3>
+                                                </div>
+                                                <p>{{Session::get('info')}}</p>
+                                                <form role="form" action="{{route("storemessage")}}" method="post">
+                                                    @csrf
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Your Name" class="form-control">
+                                                                <input type="text" placeholder="Your Name" name="name" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <input type="email" placeholder="Email" class="form-control">
+                                                                <input type="text" placeholder="Your Phone" name="phone" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="email" placeholder="Email" name="email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Subject" name="subject" class="form-control">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" placeholder="Subject" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="text" placeholder="Company" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
                                                     <div class="form-group">
-                                                        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                                        <textarea class="form-control" rows="3" name="message" placeholder="Message"></textarea>
                                                     </div>
                                                     <button class="aa-secondary-btn">Send</button>
                                                 </form>
