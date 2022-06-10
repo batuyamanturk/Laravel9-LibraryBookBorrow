@@ -38,9 +38,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="admin/fag;" class="nav-link" >
+                <a href="{{route('admin.faq.index')}}" class="nav-link" >
                     <i class="fa fa-cogs"></i>
-                    <span>Fag</span>
+                    <span>Faq</span>
                 </a>
             </li>
             <li class="nav-item">

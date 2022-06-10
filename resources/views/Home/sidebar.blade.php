@@ -33,7 +33,7 @@
                         <li><a href="{{route('about')}}">About Us</a> </li>
                         <li><a href="{{route('references')}}">References</a> </li>
                         <li><a href="{{route('contact')}}">Contact Us</a> </li>
-                        <li><a href="{{route('home')}}">FAQ</a> </li>
+                        <li><a href="{{route('faq')}}">FAQ</a> </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

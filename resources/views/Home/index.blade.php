@@ -62,28 +62,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-support-area">
-                        <!-- single support -->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="aa-support-single">
-                                <span class="fa fa-truck"></span>
-                                <h4>FREE SHIPPING</h4>
-                                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
-                            </div>
-                        </div>
-                        <!-- single support -->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="aa-support-single">
-                                <span class="fa fa-clock-o"></span>
-                                <h4>30 DAYS MONEY BACK</h4>
-                                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
-                            </div>
-                        </div>
-                        <!-- single support -->
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-12 col-sm-4 col-xs-">
                             <div class="aa-support-single">
                                 <span class="fa fa-phone"></span>
                                 <h4>SUPPORT 24/7</h4>
-                                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                                <P>Our Phone Number:+7531594268</P>
                             </div>
                         </div>
                     </div>
@@ -102,39 +85,43 @@
                             <!-- single slide -->
                             <li>
                                 <div class="aa-testimonial-single">
-                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/testimonial-img-2.jpg" alt="testimonial img">
+                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/atatürk.jpg" style="width: 150px; height: 150px;" alt="testimonial img">
                                     <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                                    <p>“Science is the most reliable guide in life.”</p>
                                     <div class="aa-testimonial-info">
-                                        <p>Allison</p>
-                                        <span>Designer</span>
-                                        <a href="#">Dribble.com</a>
+                                        <p>Mustafa Kemal Ataturk</p>
                                     </div>
                                 </div>
                             </li>
                             <!-- single slide -->
                             <li>
                                 <div class="aa-testimonial-single">
-                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/testimonial-img-1.jpg" alt="testimonial img">
+                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/marcus.jpg" style="width: 150px; height: 150px;" alt="testimonial img">
                                     <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                                    <p>“A room without books is like a body without a soul.”</p>
                                     <div class="aa-testimonial-info">
-                                        <p>KEVIN MEYER</p>
-                                        <span>CEO</span>
-                                        <a href="#">Alphabet</a>
+                                        <p>Marcus Tullius Cicero</p>
                                     </div>
                                 </div>
                             </li>
                             <!-- single slide -->
                             <li>
                                 <div class="aa-testimonial-single">
-                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/testimonial-img-3.jpg" alt="testimonial img">
+                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/frankzappa.jpg" style="width: 150px; height: 150px;" alt="testimonial img">
                                     <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                                    <p>“So many books, so little time.”</p>
                                     <div class="aa-testimonial-info">
-                                        <p>Luner</p>
-                                        <span>COO</span>
-                                        <a href="#">Kinatic Solution</a>
+                                        <p>Frank Zappa</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aa-testimonial-single">
+                                    <img class="aa-testimonial-img" src="{{asset('assets')}}/img/ern.jpg" style="width: 150px; height: 150px;" alt="testimonial img">
+                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                    <p>“There is no friend as loyal as a book.”</p>
+                                    <div class="aa-testimonial-info">
+                                        <p>Ernest Hemingway</p>
                                     </div>
                                 </div>
                             </li>
@@ -157,7 +144,7 @@
                 <div class="col-md-12">
                     <div class="aa-subscribe-area">
                         <h3>Subscribe our newsletter </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+                        <p>Subscribe to find out our new coming books </p>
                         <form action="" class="aa-subscribe-form">
                             <input type="email" name="" id="" placeholder="Enter your Email">
                             <input type="submit" value="Subscribe">

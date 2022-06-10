@@ -32,7 +32,7 @@
                                         <div id="demo-1" class="simpleLens-gallery-container">
                                             <div class="simpleLens-thumbnails-container">
                                                 <a data-big-image="img/view-slider/medium/polo-shirt-1.png" data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">
-                                                    <img src="{{Storage::url($data->image)}}">
+                                                    <img src="{{Storage::url($data->image)}}" style="width: 250px; height: 300px;">
                                                 </a>
                                             </div>
                                         </div>

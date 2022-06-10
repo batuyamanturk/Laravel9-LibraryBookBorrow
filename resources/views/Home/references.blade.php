@@ -23,6 +23,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="section title">
+                    <h3>References</h3>
+                </div>
                 {!! $settings->references !!}
             </div>
         </div>
