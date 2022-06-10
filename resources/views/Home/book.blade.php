@@ -40,6 +40,7 @@
                                 </div>
                                 <!-- Modal view content -->
                                 <div class="col-md-7 col-sm-7 col-xs-12">
+                                    <p>{{Session::get('info')}}</p>
                                     <div class="aa-product-view-content">
                                         <h2>{{$data->title}}</h2>
                                         <br>
@@ -68,74 +69,54 @@
                             </div>
                             <div class="tab-pane fade " id="review">
                                 <div class="aa-product-review-area">
-                                    <h4>2 Reviews for {{$data->title}}</h4>
+                                    <h4>Reviews for {{$data->title}}</h4>
                                     <ul class="aa-review-nav">
+                                        @foreach($comments as $rs)
                                         <li>
                                             <div class="media">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
-                                                    </a>
-                                                </div>
                                                 <div class="media-body">
-                                                    <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
+                                                    <h4 class="media-heading"><strong>{{$rs->user->name}}</strong> - <span>{{$rs->created_at}}</span></h4>
                                                     <div class="aa-product-rating">
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star-o"></span>
+                                                        <p>Rate {{$rs->rate}}</p>
                                                     </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                    <strong>{{$rs->subject}}</strong>
+                                                    <p>{{$rs->review}}</p>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
-                                                    <div class="aa-product-rating">
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star"></span>
-                                                        <span class="fa fa-star-o"></span>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                     <h4>Add a review</h4>
-                                    <div class="aa-your-rating">
-                                        <p>Your Rating</p>
-                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                    </div>
                                     <!-- review form -->
-                                    <form action="" class="aa-review-form">
+                                    <form action="{{route('storecomment')}}" class="review-form"  role="form" method="post">
+                                        @csrf
+                                        <input class="input" type="hidden" name="book_id" value="{{$data->id}}">
+                                        <div class="form-group">
+                                            <label for="name">Subject</label>
+                                            <input type="text" class="form-control" name="subject"  placeholder="subject">
+                                        </div>
                                         <div class="form-group">
                                             <label for="message">Your Review</label>
-                                            <textarea class="form-control" rows="3" id="message"></textarea>
+                                            <textarea class="form-control" rows="3"  name="review" ></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="name">Name</label>
-                                            <input type="text" class="form-control" id="name" placeholder="Name">
+                                            <div class="aa-your-rating">
+                                                <p>Your Rating</p>
+                                                <input list="stars" name="rate">
+                                                <datalist id="stars">
+                                                    <option value="1 ">
+                                                    <option value="2">
+                                                    <option value="3">
+                                                    <option value="4">
+                                                    <option value="5">
+                                                </datalist>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-                                        </div>
-
+                                        @auth
                                         <button type="submit" class="btn btn-default aa-review-submit">Submit</button>
+                                        @else
+                                            <a href="/login" class="aa-primary-btn">For Submit Your Review,Please Login</a>
+                                        @endauth
                                     </form>
                                 </div>
                             </div>

@@ -22,27 +22,27 @@
                             </tr>
                             <tr>
                                 <th style="width: 200px;">Name</th>
-                                <td> {{$data->name}} </td>
+                                <td> {{$data->user->name}} </td>
                             </tr>
                             <tr>
-                                <th style="width: 200px;">Phone</th>
-                                <td> {{$data->phone}} </td>
-                            </tr>
-                            <tr>
-                                <th style="width: 200px;">Email</th>
-                                <td> {{$data->email}} </td>
+                                <th style="width: 200px;">Name</th>
+                                <td> {{$data->book->title}} </td>
                             </tr>
                             <tr>
                                 <th style="width: 200px;">Subject</th>
                                 <td> {{$data->subject}} </td>
                             </tr>
                             <tr>
-                                <th style="width: 200px;">Message</th>
-                                <td> {{$data->message}} </td>
+                                <th style="width: 200px;">Review</th>
+                                <td> {{$data->review}} </td>
+                            </tr>
+                            </tr>
+                            <th style="width: 200px;">Rate</th>
+                            <td> {{$data->rate}} </td>
                             </tr>
                             <tr>
                                 <th style="width: 200px;">IP Number</th>
-                                <td> {{$data->ip}} </td>
+                                <td> {{$data->IP}} </td>
                             </tr>
                             <th style="width: 200px;">Status</th>
                             <td> {{$data->status}} </td>
@@ -51,17 +51,21 @@
                                 <th style="width: 200px;">Created Date</th>
                                 <td> {{$data->created_at}} </td>
                             </tr>
-                            <tr>
-                                <th style="width: 200px;">Admin Note</th>
-                                <td>
-                                    <form role="form" action="{{route('admin.message.update',['id'=>$data->id])}}" method="post">
-                                        @csrf
-                                        <textarea id="note" name="note" >{{$data->note}}</textarea>
+                            tr>
+                            <th style="width: 200px;">Admin Note</th>
+                            <td>
+                                <form role="form" action="{{route('admin.comment.update',['id'=>$data->id])}}" method="post">
+                                    @csrf
+                                    <select name="status">
+                                        <option selected>{{$data->status}}</option>
+                                        <option>Enabled</option>
+                                        <option>Disabled</option>
+                                    </select>
 
-                                        <button type="submit" class="btn btn-info">Update Note </button>
+                                    <button type="submit" class="btn btn-info">Update Comment </button>
 
-                                    </form>
-                                </td>
+                                </form>
+                            </td>
                             </tr>
                         </table>
                     </div>

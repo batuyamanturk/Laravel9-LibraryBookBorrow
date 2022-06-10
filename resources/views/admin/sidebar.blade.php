@@ -38,6 +38,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{route('admin.comment.index')}}" class="nav-link" >
+                    <i class="fa fa-cogs"></i>
+                    <span>Comments</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{route('admin.faq.index')}}" class="nav-link" >
                     <i class="fa fa-cogs"></i>
                     <span>Faq</span>
