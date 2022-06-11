@@ -46,7 +46,6 @@
 </head>
 <body>
 @include("home.header")
-@include('home.sidebar')
 <div class="container">
     @yield('content')
 </div>

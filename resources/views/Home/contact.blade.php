@@ -6,7 +6,6 @@
 @section('icon',Storage::url($settings->icon))
 
 
-
 @section('content')
     <section id="aa-catg-head-banner">
         <div class="breadcrumb">

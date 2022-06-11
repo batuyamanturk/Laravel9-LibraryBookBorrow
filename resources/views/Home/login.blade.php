@@ -1,9 +1,6 @@
-@extends('layouts.frontbase')
+@extends('layouts.frontbaselogin')
 
-@section('title', 'About Us |'.$settings->title)
-@section('description',  $settings->description)
-@section('keywords',  $settings->keywords)
-@section('icon',Storage::url($settings->icon))
+@section('title', 'User Login')
 
 @section('content')
     <section id="aa-catg-head-banner">
@@ -11,7 +8,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li class="active">About Us</li>
+                    <li class="active">User Login</li>
                 </div>
             </div>
         </div>
@@ -22,9 +19,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section title">
-                    <h3>About Us</h3>
+                    <h3>User Login</h3>
                 </div>
-                {!! $settings->aboutus !!}
+                @include('auth.login')
             </div>
         </div>
     </div>

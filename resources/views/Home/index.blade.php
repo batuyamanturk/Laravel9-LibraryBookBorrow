@@ -8,9 +8,8 @@
 
 
 @section('content')
-@section('slider')
     @include("home.slider")
-@show
+
 
     <!-- Products section -->
     <section id="aa-product">

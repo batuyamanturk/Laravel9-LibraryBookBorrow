@@ -122,4 +122,13 @@ class HomeController extends Controller
         return view('home.test');
     }
 
+    public function logout(Request $reguest)
+    {
+        Auth::logout();
+
+        $reguest->session()->invalidate();
+        $reguest->session()->regenerateToken();
+        return redirect('/');
+    }
+
 }
