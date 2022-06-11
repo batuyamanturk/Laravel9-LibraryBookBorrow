@@ -47,7 +47,11 @@
                                         <label>Author: <p>{{$data->author}}</p></label><br>
                                         <label>Page Number: <p>{{$data->pagenum}}</p></label><br>
                                         <label>Publication Year: <p>{{$data->publicationyear}}</p></label><br>
-                                        <label>Description: <p>{{$data->description}}</p></label>
+                                        <label>Description: <p>{{$data->description}}</p></label><br>
+                                        @php
+                                            $average = $data->comment->average('rate');
+                                        @endphp
+                                        <label>{{$data->comment->count('id')}} Reviews for {{$data->title}}<p>Average of ratings:{{number_format($average,2)}}</p></label><br>
                                         <div class="aa-prod-view-bottom">
                                             <a class="aa-add-to-cart-btn" href="#">Add To Cart</a>
                                         </div>
