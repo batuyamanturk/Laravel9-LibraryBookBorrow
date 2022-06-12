@@ -58,10 +58,12 @@ Route::get('/categorybooks/{id}',[HomeController::class,'categorybooks'])->name(
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-//***************************USER AUTH CONTROL ****************************************************************
+//***************************USER PANEL CONTROL ****************************************************************
 Route::middleware('auth')->group(function () {
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/','index')->name('index');
+        Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/reviewsdestroy/{id}',  'reviewsdestroy')->name('reviewsdestroy');
     });
 
 
