@@ -5,10 +5,30 @@
 @section('keywords',  $settings->keywords)
 @section('icon',Storage::url($settings->icon))
 @section('head')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
 @endsection
 @section('content')
     <section id="aa-catg-head-banner">
@@ -21,33 +41,44 @@
             </div>
         </div>
     </section>
-    <!-- / catg header banner section -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section title">
-                    <h3>Frequently Asked Questions</h3>
-                </div>
-                <div class="accordion">
-                    @foreach($datalist as $rs)
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#collapse{{$loop->iteration}}">
-                                {{$rs->question}}
-                            </a>
-                        </div>
-                        <div id="#collapse{{$loop->iteration}}" class="collapse  show " data-parent="#accordion">
-                            <div class="card-body">
-                                {!! $rs->answer !!}
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
+    <button class="accordion">Question 1</button>
+    <div class="panel">
+        <p>How do i return the book ?</p>
+        <p>When your rental period is over, you have to ship it back to us. Otherwise, you will be fined per day that you ship late.</p>
+    </div>
+
+    <button class="accordion">Question 2</button>
+    <div class="panel">
+        <p>How much is the late fee per day?</p>
+        <p>The daily late fee is 5 TL.</p>
     </div>
 
 
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 @endsection
+
+
+
+
+
+
+
+
+
+

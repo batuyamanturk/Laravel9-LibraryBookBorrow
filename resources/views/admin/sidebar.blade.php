@@ -4,8 +4,8 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 
-            <p class="centered"><a href="profile.html"><img src="{{asset('assets')}}/admin/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Marcel Newman</h5>
+            <p class="centered"><a href="{{route('admin.index')}}"><img src="{{asset('assets')}}/admin/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+            <h5 class="centered">{{Auth::user()->name}}</h5>
 
             <li class="nav-item">
                 <a href="{{route('admin.index')}}" class="nav-link">
@@ -29,6 +29,12 @@
                 <a href="{{route('admin.settings')}}" class="nav-link">
                     <i class="fa fa-cogs"></i>
                     <span>Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.user.index')}}" class="nav-link">
+                    <i class="fa fa-cogs"></i>
+                    <span>User</span>
                 </a>
             </li>
             <li class="nav-item">
