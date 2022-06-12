@@ -81,9 +81,23 @@ class ShopCartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function add($id)
     {
-        //
+        $data = ShopCart::where('book_id',$id)->where('user_id',Auth::id())->first();
+        if ($data)
+        {
+            return redirect()->back()->with('info','You can not add same book twice');
+
+        }
+        else
+        {
+            $data = new ShopCart();
+            $data->book_id = $id;
+            $data->user_id = Auth::id();
+        }
+        $data->save();
+
+        return redirect()->back()->with('info','Book Added to Shopcart..');
     }
 
     /**
