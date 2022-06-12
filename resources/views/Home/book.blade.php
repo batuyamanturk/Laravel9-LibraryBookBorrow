@@ -52,8 +52,13 @@
                                             $average = $data->comment->average('rate');
                                         @endphp
                                         <label>{{$data->comment->count('id')}} Reviews for {{$data->title}}<p>Average of ratings:{{number_format($average,2)}}</p></label><br>
+
                                         <div class="aa-prod-view-bottom">
-                                            <a class="aa-add-to-cart-btn" href="#">Add To Cart</a>
+                                            <form action="{{route('shopcart.store')}}" method="post">
+                                                @csrf
+                                                <input class="form-control" name="id" value="{{$data->id}}" type="hidden">
+                                                <button type="submit" class="aa-add-to-cart-btn" href="#">Add To Cart</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
