@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
+use App\Models\Borrow;
+use App\Models\order_book;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
-        $data = Comment::all();
-
-        return view('admin.comment.index',[
+        $data = Borrow::where('status',$slug)->get();
+        return view('admin.borrows.index',[
             'data'=> $data
         ]);
     }
@@ -51,10 +51,11 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        $data = Comment::find($id);
-        $data->save();
-        return view('admin.comment.show',[
-            'data'=> $data
+        $data = Borrow::find($id);
+        $datalist = order_book::where('order_id',$id)->get();
+        return view('admin.borrows.show',[
+            'data'=> $data,
+            'datalist'=> $datalist
         ]);
     }
 
@@ -78,10 +79,11 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=Comment::find($id);
+        $data=Borrow::find($id);
         $data->status=$request->status;
+        $data->note=$request->note;
         $data->save();
-        return redirect()->route('admin.comment.show',['id'=>$id]);
+        return redirect(route('admin.borrow.show',['id'=>$id]));
     }
 
     /**
@@ -92,8 +94,6 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        $data=Comment::find($id);
-        $data->delete();
-        return redirect(route('admin.comment.index'));
+        //
     }
 }

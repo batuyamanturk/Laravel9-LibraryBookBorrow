@@ -74,4 +74,14 @@ class User extends Authenticatable
         return $this->hasMany(ShopCart::class);
     }
 
+    public function borrow()
+    {
+        return $this->hasMany(Borrow::class);
+    }
+
+    public function order_book()
+    {
+        return $this->hasMany(order_book::class);
+    }
+
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\AdminPanel\OrderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopCartController;
 use App\Http\Controllers\UserController;
@@ -91,7 +92,7 @@ Route::middleware('auth')->group(function () {
     //********************************GENERAL ROUTES ****************************************************************
         Route::get('/settings', [AdminHomeController::class, 'settings'])->name('settings');
         Route::post('/settings', [AdminHomeController::class, 'settingsUpdate'])->name('settings.update');
-    //********************************ADMIN CATEGORY ROUTES ****************************************************************
+        //********************************ADMIN CATEGORY ROUTES ****************************************************************
         Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
             Route::get('/',  'index')->name('index');
             Route::get('/create', 'create')->name('create');
@@ -101,7 +102,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/destroy/{id}',  'destroy')->name('destroy');
             Route::get('/show/{id}',  'show')->name('show');
         });
-    //********************************ADMIN BOOK ROUTES ****************************************************************
+        //********************************ADMIN BOOK ROUTES ****************************************************************
         Route::prefix('/book')->name('book.')->controller(AdminBookController::class)->group(function () {
             Route::get('/','index')->name('index');
             Route::get('/create', 'create')->name('create');
@@ -156,7 +157,18 @@ Route::middleware('auth')->group(function () {
             Route::get('/destroyrole/{uid}/{rid}',  'destroyrole')->name('destroyrole');
 
         });
-    });
-});
+        //********************************ADMIN ORDERS ROUTES *******************************************************
+        Route::prefix('/borrow')->name('borrow.')->controller(OrderController::class)->group(function () {
+            Route::get('/{slug}','index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store',  'store')->name('store');
+            Route::get('/edit/{id}',  'edit')->name('edit');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}',  'destroy')->name('destroy');
+            Route::get('/show/{id}',  'show')->name('show');
+        });
+    });// admin panel group
+
+}); // user auth group
 
 

@@ -28,8 +28,6 @@
                                 <ul class="aa-head-top-nav-right">
                                     @auth
                                     <li><a href="{{route('userpanel.index')}}">{{Auth::user()->name}}</a></li>
-                                    <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                                    <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
                                     <li><a href="/logoutuser" >Logout</a></li>
                                     @endauth
 

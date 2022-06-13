@@ -37,11 +37,17 @@
                     <span>User</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="admin/borrow;" class="nav-link" >
-                    <i class="fa fa-cogs"></i>
+            <li class="sub-menu">
+                <a class="active" href="javascript:;" >
+                    <i class="fa fa-book"></i>
                     <span>Borrow</span>
                 </a>
+                <ul class="sub">
+                    <li class="active"><a  href="{{route('admin.borrow.index',['slug'=>'New'])}}">New</a></li>
+                    <li><a  href="{{route('admin.borrow.index',['slug'=>'Accepted'])}}">Accepted</a></li>
+                    <li><a  href="{{route('admin.borrow.index',['slug'=>'Shipped'])}}">Shipped</a></li>
+                    <li><a  href="{{route('admin.borrow.index',['slug'=>'Cancelled'])}}">Cancelled</a></li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a href="{{route('admin.comment.index')}}" class="nav-link" >
@@ -63,5 +69,13 @@
             </li>
         <!-- sidebar menu end-->
     </div>
+    <script>
+        //custom select box
+
+        $(function(){
+            $('select.styled').customSelect();
+        });
+
+    </script>
 </aside>
 <!--sidebar end-->
