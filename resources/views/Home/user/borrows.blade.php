@@ -1,6 +1,6 @@
 @extends('layouts.frontbaselogin')
 
-@section('title', 'User Comments & Reviews ')
+@section('title', 'User Borrowed Book List')
 
 @section('content')
     <section id="aa-catg-head-banner">
@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li class="active">User Comments & Reviews</li>
+                    <li class="active">User Borrowed Book List</li>
                 </div>
             </div>
         </div>
@@ -30,35 +30,30 @@
                             </div>
                             <div class="col-md-10">
                                 <div class="aa-myaccount-register">
-                                    <h4>User Comments & Reviews</h4>
+                                    <h4>User Borrowed Book List</h4>
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
                                             <th style="width: 10px">Id</th>
-                                            <th>Book Name</th>
-                                            <th>Name</th>
-                                            <th>Subject</th>
-                                            <th>Review</th>
-                                            <th>Rate</th>
+                                            <th>Name&Surname</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Addres</th>
                                             <th>Status</th>
                                             <th style="width: 40px">Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($comments as $rs)
+                                        @foreach($borrows as $rs)
                                             <tr>
                                                 <td>{{$rs->id}}</td>
-                                                <td><a href="{{route('book',['id'=>$rs->book_id])}}">
-                                                        {{$rs->book->title}}
-                                                    </a>
-                                                </td>
-                                                <td>{{$rs->user->name}}</td>
-                                                <td>{{$rs->subject}}</td>
-                                                <td>{{$rs->review}}</td>
-                                                <td>{{$rs->rate}}</td>
+
+                                                <td>{{$rs->name}}</td>
+                                                <td>{{$rs->email}}</td>
+                                                <td>{{$rs->phone}}</td>
+                                                <td>{{$rs->address}}</td>
                                                 <td>{{$rs->status}}</td>
-                                                <td><a href="{{route('userpanel.reviewsdestroy',['id'=>$rs->id])}}" class="btn btn-danger btn-sm"
-                                                       onclick="return confirm('Are you sure to delete?')">Delete</a></td>
+                                                <td><a href="{{route('userpanel.borrowdetail',['id'=>$rs->id])}}" class="btn btn-danger btn-sm">Show Detail</a></td>
 
                                             </tr>
                                         @endforeach

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Borrow;
 use App\Models\Comment;
+use App\Models\order_book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +27,27 @@ class UserController extends Controller
         return view('home.user.comments',[
             'comments'=>$comments,
         ]);
+    }
+
+    public function borrows()
+    {
+
+        $borrows = Borrow::where('user_id','=',Auth::id())->get();
+        return view('home.user.borrows',[
+            'borrows'=>$borrows,
+        ]);
+    }
+
+    public function borrowdetail($id)
+    {
+        $borrows = Borrow::find($id);
+        $orderbooks = order_book::where('order_id','=',$id)->get();
+        return view('home.user.borrowdetail',[
+            'borrows'=>$borrows,
+            'orderbooks'=>$orderbooks
+        ]);
+
+
     }
 
     /**

@@ -66,10 +66,6 @@
                                     <span class="fa fa-shopping-basket"></span>
                                     <span class="aa-cart-title">SHOPPING CART</span>
                                 </a>
-                                <div class="aa-cartbox-summary">
-
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                                </div>
                             </div>
                             <!-- / cart box -->
                             <!-- search box -->
