@@ -28,6 +28,7 @@
                                     <div class="tab-pane fade in active" id="men">
                                         <ul class="aa-product-catg">
                                             <!-- start single book item -->
+                                            <p>{{Session::get('info')}}</p>
                                             @foreach($booklist1 as $rs)
                                             <li>
                                                 <figure>

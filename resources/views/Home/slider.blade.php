@@ -9,8 +9,8 @@
                         @foreach($sliderdata as $rs)
                         <li>
                             <div class="seq-model"  >
-                                    <a href="{{route('book',[$rs->id])}}" class=" aa-secondary-btn">
-                                        <img  src="{{Storage::url($rs->image)}} " style="width: 400px; height: 400px;"/>
+                                    <a href="{{route('book',[$rs->id])}}">
+                                        <img  src="{{Storage::url($rs->image)}} " style="width: 400px; height: 400px; margin-left: 400px; margin-right: 400px; margin-top: 50px;"/>
                                     </a>
                             </div>
                             <div class="seq-title" >
